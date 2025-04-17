@@ -1,13 +1,12 @@
 # F-Coding-Guidelines
-F# Coding Guidelines
 
 Company: Miroslav Husťák (sole owner)
 
-1. Philosophy
+##1. Philosophy
 
 Following a pure functional programming approach, avoiding object-oriented features unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
 
-2. General Principles
+##2. General Principles
 
 **Functional-Only Style**
 
@@ -17,7 +16,7 @@ No Mixing of Paradigms
 
 No blending of OOP and functional paradigms. Functional purity is preferred.
 
-3. Error Handling and Reflection
+##3. Error Handling and Reflection
 
 Defensive Coding
 
@@ -37,7 +36,7 @@ Reflection is not used in application logic. Libraries that depend on reflection
 Preferred Serialiser: Thoth.Json.Net
 Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serialisation.
 
-4. Code Structure & Patterns
+##4. Code Structure & Patterns
 
 Monadic Abstractions
 
@@ -64,7 +63,7 @@ Single-Direction Dependency
 
 Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept.
 
-5. Types and Testing
+##5. Types and Testing
 
 Type-Driven Design
 
@@ -74,13 +73,13 @@ Testing Philosophy
 
 Pure functions are assumed to be correct by construction. Unit tests are optional for these; instead, integration tests and property-based testing are used.
 
-6. Async-by-Default
+##6. Async-by-Default
 
 Preferring Async Versions
 
 If an async variant of an API exists, preference is given to it. Even if `Async.RunSynchronously` is initially used, the async model opens up future possibilities (such as cancellation or non-blocking constructs) with minimal refactoring.
 
-7. Data Handling
+##7. Data Handling
 
 No ORMs and Micro ORMs (Object-Relational Mappers)
 
