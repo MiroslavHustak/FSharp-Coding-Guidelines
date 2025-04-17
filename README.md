@@ -4,6 +4,7 @@ F# Coding Guidelines
 Company: Miroslav Husťák (sole owner)
 
 1. Philosophy
+
 Following a pure functional programming approach, avoiding object-oriented features unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
 
 2. General Principles
@@ -11,7 +12,9 @@ Following a pure functional programming approach, avoiding object-oriented featu
 Functional-Only Style
 
 No use of classes, inheritance, or interfaces unless required for interoperability with .NET or external frameworks (such as Fabulous or Elmish.WPF).
+
 No Mixing of Paradigms
+
 No blending of OOP and functional paradigms. Functional purity is preferred.
 
 3. Error Handling and Reflection
@@ -43,6 +46,7 @@ Monadic custom computation expressions (using single-case discriminated unions f
 Asynchronous Code
 
 Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Parallel` is preferred for concurrency. `Task` may be used for performance-sensitive, CPU-bound operations.
+
 Functional Control Flow
 Using pattern matching and active patterns instead of `if...then...else`. Looping is achieved through tail-recursive functions or Haskell-like collection functions such as `map`, `iter`, or `fold`. No query expressions.
 
@@ -55,7 +59,9 @@ Avoiding Imperative Constructs
 MVU Organisation
 
 MVU (Model-View-Update) logic is kept in a single module per UI component. Splitting into multiple files/modules is avoided for the sake of readability.
+
 Single-Direction Dependency
+
 Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept.
 
 5. Types and Testing
