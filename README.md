@@ -35,6 +35,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 Reflection is not used in application logic. Libraries that depend on reflection (such as some serialisers) are avoided unless no viable alternative exists.
 
 **Preferred (De)Serialiser:**
+
 Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serialisation.
 
 ## 4. Code Structure & Patterns
