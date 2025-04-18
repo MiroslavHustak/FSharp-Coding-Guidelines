@@ -28,7 +28,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 **Null Handling**
 
-`Option.ofNull` rather than `Option.ofObj` or `Option.ofNullable` is used consistently for .NET types — both reference and value types (incl. String originating from a .NET library) — for simplicity and uniformity. String values may be handled with the help of string, Option.ofNullEmpty or Option.NullEmptySpace.  
+`Option.ofNull` rather than `Option.ofObj` or `Option.ofNullable` is used consistently for .NET types — both reference and value types (incl. strings originating from a .NET library) — for simplicity and uniformity. Strings may be handled with the help of `string`, `Option.ofNullEmpty` or `Option.NullEmptySpace`.  
 
 **Reflection-Free Code**
 
