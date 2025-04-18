@@ -1,4 +1,4 @@
-# **F#-Coding-Guidelines**
+# **F# Coding Guidelines**
 
 Company: Miroslav Husťák (sole owner)
 
