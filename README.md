@@ -8,7 +8,7 @@ Following a pure functional programming approach, avoiding object-oriented featu
 
 ## 2. General Principles
 
-<span style="color:red;">**Functional-Only Style** </span>
+**Functional-Only Style**
 
 No use of classes, inheritance, or interfaces unless required for interoperability with .NET or external frameworks (such as Fabulous or Elmish.WPF).
 
