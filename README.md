@@ -67,7 +67,7 @@ MVU (Model-View-Update) logic is kept in a single module per UI component. Split
 
 Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept.
 
-## 5. Types and Testing
+## 5. Type-Driven Design and Testing
 
 **Type-Driven Design**
 
