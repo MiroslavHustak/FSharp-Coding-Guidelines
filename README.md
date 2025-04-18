@@ -79,9 +79,9 @@ Pure functions are assumed to be correct by design especially when type-drive de
 
 ## 6. Async-by-Default
 
-**Preferring Async Versions**
+**Preferring Asynchronous Versions**
 
-If an async variant of an API exists, preference is given to it. Even if `Async.RunSynchronously` is initially used, the async model opens up future possibilities (such as cancellation or non-blocking constructs) with minimal refactoring.
+If an asynchronous variant of an API exists, preference is given to it. Even if `Async.RunSynchronously` is initially used, the async model opens up future possibilities (such as cancellation or non-blocking constructs) with minimal refactoring.
 
 ## 7. Data Handling
 
