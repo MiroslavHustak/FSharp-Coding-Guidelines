@@ -75,7 +75,7 @@ Preference is given to type-driven development (using single-case discriminated 
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by construction. Unit tests are optional for these; instead, integration tests and property-based testing are used.
+Pure functions are assumed to be correct by design. Unit tests are optional for these; instead, integration tests and property-based testing are used.
 
 ## 6. Async-by-Default
 
