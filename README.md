@@ -57,11 +57,15 @@ Using pattern matching and active patterns instead of `if...then...else`. Loopin
 - No LINQ expressions
 - No mutable state
 - No `for` and `while` loops
-- Arrays immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
+- `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
 
 **MVU Organisation**
 
 MVU (Model-View-Update) logic is kept in a single module per UI component. Splitting into multiple files/modules is avoided for the sake of readability.
+
+**Collections**
+
+Use immutable collections (`List`, `Set`, `Map`) unless there is a compelling reason to use `Array`. Exercise caution when using lazy-evaluated sequences (`Seq`).
 
 **Single-Direction Dependency**
 
