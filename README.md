@@ -65,7 +65,7 @@ MVU (Model-View-Update) logic is kept in a single module per UI component. Split
 
 **Collections**
 
-Use immutable collections (`List`, `Set`, `Map`) unless there is a compelling reason to use `Array`. Exercise caution when using lazy-evaluated sequences (`Seq`).
+Immutable collections (`List`, `Set`, `Map`) shall be employed unless there is a compelling reason to use `Array`. Exercise caution when using lazy-evaluated sequences (`Seq`).
 
 **Single-Direction Dependency**
 
