@@ -53,11 +53,12 @@ Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Pa
 Using pattern matching and active patterns instead of `if...then...else`. Looping is achieved through tail-recursive functions or Haskell-like collection functions such as `map`, `iter`, or `fold`. No query expressions.
 
 **Avoiding Imperative Constructs** 
-
-•	No LINQ expressions<br/> 
-•	No mutable state<br/>
-•	No `for`/`while` loops<br/> 
-•	Arrays immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.<br/>
+<ul>
+<li>No LINQ expressions</li>
+<li>No mutable state</li>
+<li>No `for`/`while` loops</li>
+<li>Arrays immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.</li>
+</ul>
 
 **MVU Organisation**
 
@@ -87,13 +88,7 @@ If an asynchronous variant of an API exists, preference is given to it. Even if 
 
 **No ORMs and Micro ORMs (Object-Relational Mappers)**
 
-Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs. Using the following providers for direct database access:
-
-•	Npgsql for PostgreSQL (ADO.NET provider)
-
-•	Microsoft.Data.SqlClient for MS SQL Server (ADO.NET provider)
-
-•	ODP.NET (Oracle Data Provider for .NET) for Oracle
+Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs.
 
 **SQL Over SQL Type Providers**
 
