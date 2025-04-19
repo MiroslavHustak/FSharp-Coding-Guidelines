@@ -87,7 +87,13 @@ If an asynchronous variant of an API exists, preference is given to it. Even if 
 
 **No ORMs and Micro ORMs (Object-Relational Mappers)**
 
-Plain SQL is preferred for database access, using ADO.NET for MS SQL Server and ODP.NET for Oracle. Templates for common scenarios are hand-written (both async and sync).
+Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs. Using the following providers for direct database access:
+
+•	Npgsql for PostgreSQL (ADO.NET provider)
+
+•	System.Data.SqlClient or Microsoft.Data.SqlClient for MS SQL Server (ADO.NET providers)
+
+•	ODP.NET (Oracle Data Provider for .NET) for Oracle
 
 **SQL Over SQL Type Providers**
 
