@@ -53,12 +53,11 @@ Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Pa
 Using pattern matching and active patterns instead of `if...then...else`. Looping is achieved through tail-recursive functions or Haskell-like collection functions such as `map`, `iter`, or `fold`. No query expressions.
 
 **Avoiding Imperative Constructs** 
-<ul>
-<li>No LINQ expressions</li>
-<li>No mutable state</li>
-<li>No `for`/`while` loops</li>
-<li>Arrays immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.</li>
-</ul>
+
+- No LINQ expressions
+- No mutable state
+- No `for` and `while` loops
+- Arrays immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
 
 **MVU Organisation**
 
