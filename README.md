@@ -91,7 +91,7 @@ Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs. Us
 
 •	Npgsql for PostgreSQL (ADO.NET provider)
 
-•	System.Data.SqlClient or Microsoft.Data.SqlClient for MS SQL Server (ADO.NET providers)
+•	Microsoft.Data.SqlClient for MS SQL Server (ADO.NET provider)
 
 •	ODP.NET (Oracle Data Provider for .NET) for Oracle
 
