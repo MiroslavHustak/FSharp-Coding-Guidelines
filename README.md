@@ -26,7 +26,7 @@ All exceptions and nulls originating from .NET libraries are immediately transfo
 
 Errors are propagated using types (predominantly the `Result` type), not exceptions. Raising exceptions is avoided unless there is a compelling reason.
 
-**Null Handling**
+**Handling of Nulls Creeping From .NET Libraries**
 
 `Option.ofNull` rather than `Option.ofObj` or `Option.ofNullable` is used consistently for .NET types — both reference and value types (incl. strings originating from a .NET library) — for simplicity and uniformity. Strings may be handled with the help of `string`, `Option.ofNullEmpty` or `Option.NullEmptySpace`.  
 
