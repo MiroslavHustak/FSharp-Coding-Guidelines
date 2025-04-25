@@ -89,7 +89,7 @@ If an asynchronous variant of an API exists, preference is given to it. Even if 
 
 ## 7. Data Handling
 
-**No Fully-Fledged ORMs and Micro ORMs (Object-Relational Mappers)**
+**No Fully-Fledged ORMs or Micro ORMs (Object-Relational Mappers)**
 
 Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs.
 
