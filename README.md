@@ -71,9 +71,9 @@ Immutable collections (`List`, `Seq`, `Set`, `Map`) shall be employed unless the
 
 Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept.
 
-## 5. Type-Driven Design and Testing
+## 5. Type-Driven Development and Testing
 
-**Type-Driven Design**
+**Type-Driven Development**
 
 Preference is given to type-driven development (using single-case discriminated unions) when reasonable and when memory overhead is acceptable.
 
