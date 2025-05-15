@@ -44,6 +44,9 @@ Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serial
 
 Monadic custom computation expressions (with single-case discriminated unions used for creating builders) are employed where appropriate. If monadic function composition is used (functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`), it is recommended to limit its usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
 
+**Avoid Non-Monadic Bind in Computation Expressions**
+When defining custom computation expressions, ensure the Bind method adheres to monadic principles. Non-monadic Bind implementations can lead to confusing or unpredictable behavior, break compatibility with standard F# idioms, and make code harder to reason about. 
+
 **Asynchronous Code**
 
 Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Parallel` is preferred for concurrency. `Task` may be used for performance-sensitive, CPU-bound operations.
