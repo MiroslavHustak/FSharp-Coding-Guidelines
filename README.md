@@ -75,23 +75,29 @@ Immutable collections (`List`, `Seq`, `Set`, `Map`) shall be employed unless the
 
 Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept.
 
-## 5. Type-Driven Development and Testing
+## 5. Enhancing Type Safety
 
 **Type-Driven Development**
 
 Preference is given to type-driven development (using single-case discriminated unions) when reasonable and when memory overhead is acceptable.
 
+**Ignore with Type Parameters**
+
+Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches partial application errors at compile time, preventing subtle bugs in cases where side effects (like logging or printing) are silently skipped.
+
+## 6. Testing
+
 **Testing Philosophy**
 
 Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests and property-based testing are used.
 
-## 6. Async-by-Default
+## 7. Async-by-Default
 
 **Preferring Asynchronous Versions**
 
 If an asynchronous variant of an API exists, preference is given to it. Even if `Async.RunSynchronously` is initially used, the async model opens up future possibilities (such as cancellation or non-blocking constructs) with minimal refactoring.
 
-## 7. Data Handling
+## 8. Data Handling
 
 **No Fully-Fledged ORMs or Micro ORMs (Object-Relational Mappers)**
 
