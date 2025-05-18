@@ -60,7 +60,7 @@ Using pattern matching and active patterns instead of `if...then...else`. Loopin
 
 - No LINQ expressions
 - No mutable state
-- No `for` and `while` loops (I do mean it. `for` is not so harmless as you might think.)
+- No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
 - `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
 
 **MVU Organisation**
