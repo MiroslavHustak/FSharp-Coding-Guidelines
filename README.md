@@ -54,7 +54,7 @@ Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Pa
 
 **Functional Control Flow**
 
-Using pattern matching and active patterns instead of `if...then...else`. Looping is achieved through tail-recursive functions or Haskell-like collection functions such as `map`, `iter`, or `fold`. No query expressions.
+Control flow is managed using pattern matching and active patterns instead of `if...then...else` constructs. Looping is either implemented through tail-recursive functions, ensuring tail-call optimization is verified (note that the `[<TailCall>]` attribute may not guarantee optimization), or through Haskell-like collection functions such as `map`, `iter`, or `fold`. Query expressions are not employed.
 
 **Avoiding Imperative Constructs** 
 
