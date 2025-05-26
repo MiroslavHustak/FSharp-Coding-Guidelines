@@ -59,6 +59,7 @@ Control flow is managed using pattern matching and active patterns instead of `i
 **Avoiding Imperative Constructs** 
 
 - No LINQ expressions
+- No query expressions
 - No mutable state
 - No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
 - `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
