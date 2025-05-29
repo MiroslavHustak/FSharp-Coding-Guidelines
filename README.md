@@ -90,7 +90,7 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests and property-based testing are used.
+Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and property-based testing (strongly recommended) are used.
 
 ## 7. Async-by-Default
 
