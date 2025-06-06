@@ -46,7 +46,7 @@ Monadic custom computation expressions (with single-case discriminated unions us
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
-When defining custom computation expressions, ensure the Bind method adheres to monadic principles. Non-monadic Bind implementations can lead to confusing or unpredictable behavior, break compatibility with standard F# idioms, and make code harder to reason about. 
+When defining custom computation expressions, ensure the `Bind` method adheres to monadic principles. Non-monadic Bind implementations can lead to confusing or unpredictable behavior, break compatibility with standard F# idioms, and make code harder to reason about. 
 
 **Asynchronous Code**
 
