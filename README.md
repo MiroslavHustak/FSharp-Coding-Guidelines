@@ -10,7 +10,7 @@ Following a pure functional programming approach, avoiding object-oriented featu
 
 **Functional-Only Style**
 
-No use of classes, inheritance, or interfaces unless required for interoperability with .NET or external frameworks (such as Fabulous, TorChSharp or Elmish.WPF).
+No use of OOP features such as classes, inheritance, or interfaces unless required for interoperability with .NET or external frameworks (such as Fabulous, TorchSharp, or Elmish.WPF).
 
 **No Mixing of Paradigms**
 
