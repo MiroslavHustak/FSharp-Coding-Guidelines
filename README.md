@@ -116,3 +116,10 @@ Type providers for CSV, Excel and JSON are preferred over equivalent .NET librar
 
 Keeping data separate from operations on data, in accordance with functional programming principles. This separation reinforces the decision to avoid mixing paradigms.
 
+## 9. Learn Lessons from Others 
+
+Learn lessons from others: https://www.youtube.com/watch?v=ua6zxKSiQ_g
+
+
+
+
