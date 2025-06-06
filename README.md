@@ -4,7 +4,7 @@ Company: Miroslav Husťák (sole owner)
 
 ## 1. Philosophy
 
-Following a pure functional programming approach, avoiding object-oriented features unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
+Following a pure functional programming approach, avoiding object-oriented features and mutibility unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
 
 ## 2. General Principles
 
