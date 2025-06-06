@@ -42,7 +42,7 @@ Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serial
 
 **Monadic Abstractions**
 
-Monadic custom computation expressions (with single-case discriminated unions used for creating builders) are employed where appropriate. If monadic function composition is used (functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`), it is recommended to limit its usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
+Monadic custom computation expressions (with single-case discriminated unions used for creating builders) are employed where appropriate. If monadic function composition / ROP is used (functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`), it is recommended to limit its usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
