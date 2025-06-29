@@ -108,7 +108,7 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs.
 
-**SQL Over SQL Type Providers**
+**Vanilla SQL Over SQL Type Providers**
 
 SQL is written explicitly rather than through SQL type providers as it is unsure how SQL type providers handle large databases.
 
