@@ -42,7 +42,7 @@ Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serial
 
 **Separation of Pure And Impure Functions**
 
-If pragmatically possible, separate pure and impure functions. Hiding impurity in function signatures should be avoided. Consider using a non-monadic emulation of Haskell's IO monad with a custom-made SCDU, such as `type IO<'a> = IO of (unit -> 'a)`.
+If pragmatically possible, separate pure and impure functions. Avoid hiding impurity in function signatures. Consider using a non-monadic emulation of Haskell’s IO monad with a custom-made SCDU, such as `type IO<'a> = IO of (unit -> 'a)`. Alternatively, you may use a free monad, but as it is one of the most complex functional features, always consult your teammates before applying it.
 
 **Monadic Abstractions**
 
