@@ -86,7 +86,7 @@ Avoiding the use of the `and` keyword and recursive namespaces to preserve the s
 
 Preference is given to type-driven development (using single-case discriminated unions) when reasonable and when memory overhead is acceptable.
 
-**Ignore with Type Parameters**
+**Using `ignore` with Type Parameters**
 
 Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches partial application errors at compile time, preventing subtle bugs in cases where side effects (like logging or printing) are silently skipped.
 
