@@ -46,11 +46,11 @@ If pragmatically possible, separate pure and impure functions. Avoid hiding impu
 
 **Monadic Abstractions**
 
-Monadic custom computation expressions (with single-case discriminated unions used for creating builders) are employed where appropriate. If monadic function composition / ROP is used (functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`), it is recommended to limit its usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
+Monadic custom CEs (with SCDUs used for creating builders) are employed where appropriate. If monadic function composition / ROP is used (functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`), it is recommended to limit its usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
-When defining custom computation expressions, ensure the `Bind` method adheres to monadic principles. Non-monadic `Bind` implementations can lead to confusing or unpredictable behavior, break compatibility with standard F# idioms, and make code harder to reason about. 
+When defining custom CEs, ensure the `Bind` method adheres to monadic principles. Non-monadic `Bind` implementations can lead to confusing or unpredictable behavior, break compatibility with standard F# idioms, and make code harder to reason about. 
 
 **Asynchronous Code**
 
@@ -84,7 +84,7 @@ Avoiding the use of the `and` keyword and recursive namespaces to preserve the s
 
 **Type-Driven Development**
 
-Preference is given to type-driven development (using single-case discriminated unions) when reasonable and when memory overhead is acceptable.
+Preference is given to type-driven development (using SCDUs) when reasonable and when memory overhead is acceptable.
 
 **Using `ignore` with Type Parameters**
 
@@ -94,7 +94,7 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and property-based testing (strongly recommended) are used.
+Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (strongly recommended) are used.
 
 ## 7. Async-by-Default
 
