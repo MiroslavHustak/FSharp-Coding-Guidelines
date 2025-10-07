@@ -84,7 +84,7 @@ Avoiding the use of the `and` keyword and recursive namespaces to preserve the s
 
 **Type-Driven Development**
 
-Preference is given to type-driven development (using SCDUs) when reasonable and when memory overhead is acceptable.
+Preference is given to type-driven development using single-case discriminated unions (SCDUs) where reasonable, as the memory overhead is negligible in most use cases.
 
 **Using `ignore` with Type Parameters**
 
