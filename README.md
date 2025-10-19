@@ -124,7 +124,11 @@ Keeping data separate from operations on data, in accordance with functional pro
 
 Always consult your team members before using the FSharpPlus library in a project.
 
-## 10. Learning Lessons from Others 
+## 10. No Copilots for Code Review 
+
+Copilots have an unmatched talent for turning a simple code review into a full-scale disaster. So, unless you have been given an extra week to fix the chaos they will surely cause, resist the urge to let them anywhere near your pull requests.
+
+## 11. Learning Lessons from Others 
 
 Learn lessons from others: https://www.youtube.com/watch?v=ua6zxKSiQ_g
 
