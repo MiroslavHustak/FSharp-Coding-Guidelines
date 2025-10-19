@@ -106,7 +106,7 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 **No Fully-Fledged ORMs or Micro ORMs (Object-Relational Mappers)**
 
-Preferring plain SQL for database interactions, avoiding ORMs and micro-ORMs.
+Preferring plain SQL for database interactions, avoiding ORMs (such as Entity Framework Core) and micro-ORMs.
 
 **Vanilla SQL Over SQL Type Providers**
 
