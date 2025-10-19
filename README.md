@@ -100,7 +100,7 @@ Pure functions are assumed to be correct by design especially when type-driven d
 
 **Preferring Asynchronous Versions**
 
-If an asynchronous variant of an API exists, it is preferred. Adopting the async model opens up future possibilities—such as cancellation or non-blocking constructs with minimal refactoring. That said, caution should be exercised when using asynchronous variants within parallel loops.
+If an asynchronous variant of an API exists, it is preferred. Adopting the async model opens up future possibilities — such as cancellation or non-blocking constructs with minimal refactoring. That said, caution should be exercised when using asynchronous variants within parallel loops.
 
 ## 8. Data Handling
 
