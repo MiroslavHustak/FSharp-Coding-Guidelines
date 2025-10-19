@@ -96,13 +96,17 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (strongly recommended) are used.
 
-## 7. Async-by-Default
+## 7. No Copilots for Code Review 
+
+Copilots have an uncanny talent for turning a simple code review into a full-scale disaster. So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests.
+
+## 8. Async-by-Default
 
 **Preferring Asynchronous Versions**
 
 If an asynchronous variant of an API exists, it is preferred. Adopting the async model opens up future possibilities — such as cancellation or non-blocking constructs with minimal refactoring. That said, caution should be exercised when using asynchronous variants within parallel loops.
 
-## 8. Data Handling
+## 9. Data Handling
 
 **No Fully-Fledged ORMs or Micro ORMs (Object-Relational Mappers)**
 
@@ -120,13 +124,9 @@ Type providers for CSV, XML, Excel and JSON are preferred over equivalent .NET l
 
 Keeping data separate from operations on data, in accordance with functional programming principles. This separation reinforces the decision to avoid mixing paradigms.
 
-## 9. FSharpPlus Library 
+## 10. FSharpPlus Library 
 
 Always consult your team members before using the FSharpPlus library in a project.
-
-## 10. No Copilots for Code Review 
-
-Copilots have an unmatched talent for turning a simple code review into a full-scale disaster. So, unless you have been given an extra week to fix the chaos they will surely cause, resist the urge to let them anywhere near your pull requests.
 
 ## 11. Learning Lessons from Others 
 
