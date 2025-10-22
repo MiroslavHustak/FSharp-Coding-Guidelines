@@ -137,7 +137,9 @@ Always consult your team members before using the FSharpPlus library in a projec
 ## 11. Learning Lessons from Others 
 
 Learn lessons from others:
+
 https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/?utm_source=tldrnewsletter
+
 https://www.youtube.com/watch?v=ua6zxKSiQ_g
 
 
