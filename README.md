@@ -50,7 +50,7 @@ Monadic custom CEs (with SCDUs used for creating builders) are employed where ap
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
-When defining custom CEs, ensure the `Bind` method adheres to monadic principles. Non-monadic `Bind` implementations can lead to confusing or unpredictable behavior, break compatibility with standard F# idioms, and make code harder to reason about. 
+WWhen defining custom CEs, ensure the `Bind` method adheres to all monadic principles. Use an alias in cases where it does not. 
 
 **Asynchronous Code**
 
