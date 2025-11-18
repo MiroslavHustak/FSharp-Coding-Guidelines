@@ -50,7 +50,7 @@ Monadic custom CEs (with SCDUs used for creating builders) are employed where ap
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
-When defining custom computation expressions, ensure that `Bind` satisfies monadic laws. If not, use a distinct method name or alias to avoid confusion.
+When defining custom computation expressions, ensure that `Bind` satisfies monadic laws. If not, use an alias to avoid confusion.
 
 **Asynchronous Code**
 
