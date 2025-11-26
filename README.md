@@ -46,11 +46,11 @@ If pragmatically possible, separate pure and impure functions. Avoid hiding impu
 
 **Monadic Abstractions**
 
-Monadic custom CEs (with SCDUs used for creating builders) are employed where appropriate. If monadic function composition / ROP is used (functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`), it is recommended to limit its usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
+Monadic custom CEs (with SCDUs used for creating builders) are employed where appropriate. If monadic composition or ROP-style function composition are used - functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`, it is recommended to limit their usage to the following functions: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Result.defaultValue/defaultWith`, `Result.sequence`, and `Result.mapError`.
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
-When defining custom computation expressions, ensure that `Bind` satisfies monadic laws. If not, use an alias to avoid confusion.
+When defining custom computation expressions, ensure that `Bind` satisfies monad laws (left identity, right identity, and associativity). If `Bind` is designed to break these laws on purpose, use an alias to avoid confusion.
 
 **Asynchronous Code**
 
