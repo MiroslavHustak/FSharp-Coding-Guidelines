@@ -33,8 +33,8 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 **Reflection-Free Code**
 
 Reflection is prohibited in application logic.  Libraries that use runtime reflection are not allowed unless:
-• no viable reflection-free alternative exists, or
-• benchmarks prove significant performance gains in critical code paths.  
+-  no viable reflection-free alternative exists, or
+-  benchmarks prove significant performance gains in critical code paths.  
 
 **Preferred (De)Serialiser:**
 
