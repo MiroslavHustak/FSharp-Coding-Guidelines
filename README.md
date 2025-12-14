@@ -88,6 +88,8 @@ Avoiding the use of the `and` keyword and recursive namespaces to preserve the s
 
 Preference is given to type-driven development using single-case discriminated unions (SCDUs) where reasonable, as the memory overhead is negligible in most use cases.
 
+Where zero runtime overhead and simple interop are required, units-of-measure–based phantom types (via FSharp.UMX) may be used to distinguish otherwise identical primitive types (for example different kinds of IDs or numeric values).
+
 **Using `ignore` with Type Parameters**
 
 Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches partial application errors at compile time, preventing subtle bugs in cases where side effects (like logging or printing) are silently skipped.
