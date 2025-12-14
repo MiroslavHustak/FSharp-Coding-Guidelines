@@ -86,7 +86,8 @@ Avoiding the use of the `and` keyword and recursive namespaces to preserve the s
 
 **Type-Driven Development**
 
-Preference is given to type-driven development using single-case discriminated unions (SCDUs) where reasonable, as the memory overhead is negligible in most use cases.
+Preference is given to type-driven development using single-case discriminated unions (SCDUs) where reasonable, as the memory overhead is negligible in most use cases. 
+Use built-in units of measure for numeric values involving physical quantities or consistent arithmetic (e.g. distances, weights, rates), as they provide compile-time safety with zero runtime overhead.
 
 Where zero runtime overhead and simple interop are required, units-of-measure–based phantom types (via FSharp.UMX) may be used to distinguish otherwise identical primitive types (for example different kinds of IDs or numeric values).
 
