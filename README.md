@@ -56,7 +56,7 @@ When defining custom computation expressions, ensure that `Bind` satisfies monad
 
 **Asynchronous Code**
 
-Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Parallel` is preferred for concurrency. `Task` or `Array.Parallel` may be used for performance-sensitive, CPU-bound operations.
+Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Parallel` is preferred for concurrency. .NET's `Task` or `Array.Parallel` may be used for performance-sensitive, CPU-bound operations.
 
 **Functional Control Flow**
 
