@@ -46,7 +46,7 @@ Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serial
 
 If pragmatically possible, separate pure and impure functions. Avoid hiding impurity in function signatures. Consider using a non-monadic emulation of Haskell’s IO monad with a custom-made SCDU, such as `type IO<'a> = IO of (unit -> 'a)`. Alternatively, you may use a free monad, but as it is one of the most complex functional features, always consult your teammates before applying it.
 
-**Monadic Abstractions**
+**Monadic Abstractions and ROP**
 
 Monadic custom CEs (with SCDUs used for creating builders) are employed where appropriate. If monadic composition or ROP-style function composition are used - functions/CEs from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`, it is recommended to consider limiting their usage to a limited number of functions/CEs, preferably: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Option.toResult`,`Result.defaultWith`, `Result.defaultValue', `Result.sequence`, `Result.either`, `Result.mapError`, `result{}`, `option{}`, `asyncResult{}`, and `asyncOption{}`.
 
