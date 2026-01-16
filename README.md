@@ -46,9 +46,9 @@ Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serial
 
 If pragmatically possible, separate pure and impure functions. Avoid hiding impurity in function signatures. Consider using a non-monadic emulation of Haskell’s IO monad with a custom-made SCDU, such as `type IO<'a> = IO of (unit -> 'a)`. Alternatively, you may use a free monad, but as it is one of the most complex functional features, always consult your teammates before applying it.
 
-**Monadic/Non-Monadic Abstractions and ROP**
+**Monadic and ROP-Style Abstractions**
 
-Pre-defined monadic (such as `result{}`, `option{}`, `asyncResult{}`, and `asyncOption{}`) and monadic/non-monadic custom CEs (with SCDUs used for creating builders) are employed where appropriate. If monadic composition or ROP-style function composition are used - functions/CEs from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`, it is recommended to consider limiting their usage to a limited number of functions, preferably to: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Option.toResult`,`Result.defaultWith`, `Result.defaultValue`, `Result.sequence`, `Result.either`, `Result.mapError`, .
+Pre-defined monadic CEs (such as `result{}`, `option{}`, `asyncResult{}`, and `asyncOption{}`) and custom monadic or ROP-style CEs (with SCDUs used for creating builders) are employed where appropriate. If monadic composition or ROP-style function composition are used - functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`, it is recommended to consider limiting their usage to a limited number of functions, preferably to: `Option.map/bind`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Option.toResult`,`Result.defaultWith`, `Result.defaultValue`, `Result.sequence`, `Result.either`, and `Result.mapError`, .
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
