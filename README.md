@@ -70,9 +70,10 @@ Control flow is managed using pattern matching and active patterns instead of `i
 - No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
 - `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
 
-**MVU Organisation**
+**Code Organisation**
 
-MVU (Model-View-Update) logic is kept in a single module per UI component. Splitting into multiple files/modules is avoided for the sake of readability.
+A single logical unit that provides a complete big-picture overview of the component must be kept in one file — regardless of the number of lines of code or the number of functions it contains — and must never be split.
+Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances.
 
 **Collections**
 
