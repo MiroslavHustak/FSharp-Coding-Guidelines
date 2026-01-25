@@ -1,5 +1,7 @@
 # **F# Coding Guidelines**
 
+How to make F# programming extremely easy and avoid getting mired in a quagmire :-).
+
 Company: Miroslav Husťák (sole owner)
 
 ## 1. Philosophy
