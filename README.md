@@ -28,7 +28,7 @@ All exceptions and nulls originating from .NET libraries are immediately transfo
 
 Errors are propagated using types (predominantly the `Result` type), not exceptions. Raising exceptions is avoided unless there is a compelling reason.
 
-**Handling of Nulls Creeping From .NET Libraries**
+**Handling of Nulls Creeping from .NET Libraries**
 
 `Option.ofNull` rather than `Option.ofObj` or `Option.ofNullable` is used consistently for .NET types — both reference and value types (incl. strings originating from .NET libraries) — for simplicity and uniformity. Strings may also be handled with the help of `string`, `Option.ofNullEmpty` or `Option.NullEmptySpace`.  
 
@@ -44,7 +44,7 @@ Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serial
 
 ## 4. Code Structure & Patterns
 
-**Separation of Pure And Impure Functions**
+**Separation of Pure and Impure Functions**
 
 When possible, separate pure and impure functions; you will thank yourself later. Avoid hiding impurity in function signatures. Consider using a non-monadic emulation of Haskell’s IO monad with a custom-made SCDU, such as `type IO<'a> = IO of (unit -> 'a)`. Alternatively, you may use a free monad, but as it is one of the most complex functional features, always consult your teammates before applying it.
 
@@ -130,7 +130,7 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 Preferring plain SQL for database interactions, avoiding ORMs (such as Entity Framework Core) and micro-ORMs.
 
-**Vanilla SQL Over SQL Type Providers**
+**Vanilla SQL over SQL Type Providers**
 
 SQL is written explicitly rather than through SQL type providers as it is unsure how SQL type providers handle large databases.
 
