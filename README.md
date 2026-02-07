@@ -1,6 +1,6 @@
 # **F# Coding Guidelines**
 
-How to make F# programming extremely easy and avoid getting mired in a quagmire :-).
+How to make F# programming extremely easy and avoid getting mired in a quagmire :-). Abide by these guidlines, you will really thank yourself later :-).
 
 Company: Miroslav Husťák (sole owner)
 
@@ -12,7 +12,7 @@ Following a pure functional programming approach, avoiding object-oriented featu
 
 **Functional-Only Style**
 
-No use of OOP features such as classes, inheritance, or interfaces unless required for interoperability with .NET or external frameworks (such as Fabulous, TorchSharp, or Elmish.WPF).
+No use of OOP features such as classes, inheritance, or interfaces unless required for interoperability with .NET or external frameworks (such as Fabulous, TorchSharp, or Elmish.WPF). 
 
 **No Mixing of Paradigms**
 
