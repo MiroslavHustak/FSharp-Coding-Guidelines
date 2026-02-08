@@ -68,6 +68,10 @@ Using F#'s `async { ... }` workflows; avoiding C#-style `async/await`. `Async.Pa
 
 Control flow is managed using pattern matching and active patterns instead of `if...then...else` constructs. Looping is typically implemented using either Haskell-like collection functions such as `map`, `iter`, or `fold`, or through tail-recursive functions or continuation-passing style (CPS) recursive functions, ensuring tail-call optimization or CPS compliance. Query expressions are not employed.
 
+**String Combination**
+
+Use type-safe `sprintf` exclusively for combining strings unless there is a compelling reason to use specialized .NET methods like `Path.Combine` or `String.concat`.
+
 **Avoiding Imperative Constructs** 
 
 - No LINQ expressions
