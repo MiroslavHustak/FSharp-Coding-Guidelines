@@ -92,7 +92,7 @@ Immutable collections (`List`, `Seq`, `Set`, `Map`) shall be employed unless the
 
 **Single-Direction Dependency**
 
-Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept.
+Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept. You cannot even imagine how happy you will be that you have sticked with this concept.
 
 ## 5. Enhancing Type Safety
 
