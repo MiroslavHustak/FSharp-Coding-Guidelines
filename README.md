@@ -34,13 +34,16 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 **Reflection-Free Code**
 
-Reflection is prohibited in application logic.  Libraries that use runtime reflection are not allowed unless:
--  no viable reflection-free alternative exists, or
--  benchmarks prove significant performance gains in critical code paths.  
+Reflection is prohibited in application logic.
 
-**Preferred (De)Serialiser:**
+When evaluating third-party libraries, distinguish between two cases:
+- Reflection hidden behind a clean API boundary — acceptable, provided it does not leak into your code, does not degrade performance in critical paths, and a reflection-free alternative of comparable quality does not exist.
+- Reflection that surfaces in your code — for example, through attributes, runtime type tokens, or untyped expressions — is prohibited on the same grounds as reflection in application logic.
 
-Favouring non-reflection-based libraries such as `Thoth.Json.Net` for (de)serialisation.
+**Explicit deserialisation over implicit mapping**
+
+Prefer deserialisation libraries that require explicit field declarations such as `Thoth.Json.Net`, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
+
 
 ## 4. Code Structure & Patterns
 
