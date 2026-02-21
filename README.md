@@ -53,7 +53,7 @@ When possible, separate pure and impure functions; you will thank yourself later
 
 **Functions, not Members**
 
-Keep records and SCDUs purely as data. Use separate functions to operate on them, rather than defining members — except in custom CEs, where members on SCDUs are unavoidable by design.
+Keep records and SCDUs purely as data. Use separate functions to operate on them, rather than defining members (sorry, Rustaceans :-( ) — except in custom CEs, where members on SCDUs are unavoidable by design.
 
 **Monadic and ROP-Style Abstractions**
 
