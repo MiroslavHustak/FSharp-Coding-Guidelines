@@ -2,7 +2,7 @@
 
 How to make profitable F# programming extremely easy and avoid getting mired in a quagmire :-). 
 
-Abide by these guidlines written for pragmatic businesses (not for ideological OOP ones), you will really thank yourself later :-). Beginners are encouraged to aim for this style early, even if they cannot follow it perfectly yet.
+Abide by these guidlines written for pragmatic FP businesses (not for ideological OOP ones), you will really thank yourself later :-). Beginners are encouraged to aim for this style early, even if they cannot follow it perfectly yet.
 
 Company: Miroslav Husťák (sole owner)
 
