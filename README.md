@@ -1,6 +1,8 @@
 # **F# Coding Guidelines**
 
-How to make F# programming extremely easy and avoid getting mired in a quagmire :-). Abide by these guidlines (beginners are encouraged to aim for this style early, even if they can’t follow it perfectly yet), you will really thank yourself later :-).
+How to make F# programming extremely easy and avoid getting mired in a quagmire :-). 
+
+Abide by these guidlines written for pragmatic businesses (not for ideological OOP ones), you will really thank yourself later :-). Beginners are encouraged to aim for this style early, even if they cannot follow it perfectly yet.
 
 Company: Miroslav Husťák (sole owner)
 
