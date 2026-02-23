@@ -57,7 +57,7 @@ Keep records, DUs and SCDUs purely as data. Use separate functions to operate on
 
 **Monadic and ROP-Style Abstractions**
 
-Use the built-in monadic CEs (`result{}`, `option{}`, `asyncResult{}`, `asyncOption{}`) and custom monadic/monad-inspired/ROP-style CEs (with SCDUs for builders) where appropriate. If monadic composition or ROP-style function composition are used - functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`, it is recommended to consider limiting their usage to a limited number of functions, preferably to: `Option.map/bind/iter`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Option.toResult`,`Result.defaultWith`, `Result.defaultValue`, `Result.sequence`, `Result.either`, and `Result.mapError`, .
+Use the built-in monadic CEs (`result{}`, `option{}`, `asyncResult{}`, `asyncOption{}`) and custom monadic/monad-inspired/ROP-style CEs (with SCDUs for builders) where appropriate. If monadic composition or ROP-style function composition are used - functions from `FSharp.Core`, `FsToolkit`, and `FsToolkit.ErrorHandling`, it is recommended to consider limiting their usage to a limited number of functions, preferably to: `Option.map/bind/iter`, `Result.map/bind`, `Option.defaultValue`, `Option.orElseWith`, `Option.toResult`,`Result.defaultWith`, `Result.defaultValue`, `Result.sequence`, `Result.either`, and `Result.mapError`.
 
 **Avoid Non-Monadic Bind in Computation Expressions**
 
