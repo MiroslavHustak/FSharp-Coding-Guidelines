@@ -4,7 +4,9 @@ How to make profitable F# programming extremely easy and avoid getting mired in 
 
 Company: Miroslav Husťák (sole owner)
 
-Note for the Alma Career guys: Please try to consider these guidlines from a business point of view - not everyone in the world is as good as you and capable of dealing with the style of code you have exposed on GitHub. My stricter guidlines actually protect you from less capable or less experienced programmers (or from self-taught idiots like me :-)) - they cannot do much damage then :-).  
+Note for the Alma Career guys: 
+
+Please try to consider these guidlines from a business point of view - not everyone in the world is as good as you and capable of dealing with the style of code you have exposed on GitHub. My stricter guidlines actually protect you from less capable or less experienced programmers (or from self-taught idiots like me :-)) - they cannot do much damage then :-).  
 
 ## 1. Philosophy
 
