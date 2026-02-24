@@ -6,7 +6,7 @@ Company: Miroslav Husťák (sole owner)
 
 **Note for the Alma Career guys:**
 
-Please, try to consider these guidlines from a business point of view - not everyone in the world is as good as you and capable of dealing with the style of code you have exposed on GitHub. My stricter guidelines actually protect you from less capable or less experienced programmers (or from self-taught idiots like me :-)) - they cannot do much damage then :-).  
+Please try to see these guidelines through the eyes of a businessman having profitability in mind. Not everyone in the world is as capable as you of dealing with the style of code you have exposed on GitHub. My stricter guidelines actually protect you from less capable or less experienced programmers (or from self-taught idiots like me :-)) - they cannot do much damage then :-).  
 
 ## 1. Philosophy
 
@@ -99,7 +99,7 @@ Immutable collections (`List`, `Seq`, `Set`, `Map`) shall be employed unless the
 
 **Single-Direction Dependency**
 
-Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept. You cannot even imagine how happy you will be that you have sticked with this concept.
+Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept. 
 
 ## 5. Enhancing Type Safety
 
