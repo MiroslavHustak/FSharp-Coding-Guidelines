@@ -4,9 +4,6 @@ How to make profitable F# programming extremely easy and avoid getting mired in 
 
 Company: Miroslav Husťák (sole owner)
 
-**Note for the Alma Career guys:**
-
-Please try to see these guidelines through the eyes of a businessman having profitability in mind. Not everyone in the world is as capable as you of dealing with the style of code you have exposed on GitHub. My stricter guidelines actually protect you from less capable or less experienced programmers (or from self-taught idiots like me :-)) - they cannot do much damage then :-).  
 
 ## 1. Philosophy
 
@@ -57,7 +54,7 @@ When possible, separate pure and impure functions; you will thank yourself later
 
 **Functions, not Members**
 
-Keep records, DUs and SCDUs purely as data. Use separate functions to operate on them, rather than defining members (sorry, Rustaceans and Alma Career guys :-( ) — except in custom CEs, where members on SCDUs are unavoidable by design.
+Keep records, DUs and SCDUs purely as data. Use separate functions to operate on them, rather than defining members (sorry, Rustaceans :-( ) — except in custom CEs, where members on SCDUs are unavoidable by design.
 
 **Monadic and ROP-Style Abstractions**
 
