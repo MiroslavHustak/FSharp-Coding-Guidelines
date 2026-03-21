@@ -145,7 +145,7 @@ SQL is written explicitly rather than through SQL type providers as it is unsure
 
 **Type Providers for Non-Database Scenarios**
 
-Type providers for CSV, XML, Excel (small clean files only) and JSON are preferred over equivalent .NET libraries due to better type inference and significantly less boilerplate.
+Type providers for CSV, XML, and JSON are preferred over equivalent .NET libraries due to better type inference and significantly less boilerplate.
 
 **Separation of Data and Operations on Data**
 
