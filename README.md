@@ -31,7 +31,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 **Handling of Nulls Creeping from .NET Libraries**
 
-`Option.ofNull` rather than `Option.ofObj` is used consistently for .NET types. Strings may also be handled with the help of `string`, `Option.ofNullEmpty` or `Option.NullEmptySpace`.  
+`Option.ofNull` rather than `Option.ofObj` is used consistently for .NET reference types. Strings may also be handled with the help of `string`, `Option.ofNullEmpty` or `Option.NullEmptySpace`.  
 
 **Reflection-Free Code**
 
