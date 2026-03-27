@@ -35,7 +35,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 **Reflection-Free Code**
 
-Reflection is prohibited in application logic.
+Reflection is dangerous because it bypasses the type system at runtime; therefore it is prohibited in application logic.
 
 When evaluating third-party libraries, distinguish between two cases:
 - Reflection hidden behind a clean API boundary — acceptable, provided it does not leak into your code, does not degrade performance in critical paths, and a reflection-free alternative of comparable quality does not exist.
