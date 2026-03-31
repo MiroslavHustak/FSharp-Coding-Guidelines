@@ -31,7 +31,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 **Handling of Nulls Creeping from .NET Libraries**
 
-`Option.ofNull'`, a project-specific adaptation of `Option.ofNull` from `FsToolkit.ErrorHandling`, is used consistently for .NET types (both reference and value types) instead of `Option.ofObj` and `Option.ofNullable` - to ensure simplicity and uniformity. Strings may also be handled with the help of `string`, `Option.ofNullEmpty` or `Option.ofNullEmptySpace`.  
+`Option.ofNull'`, a project-specific adaptation of FsToolkit's `Option.ofNull` and FSharp.Core's `Option.ofObj`, is used consistently for all nullable .NET types — both reference types and `Nullable<T>` value types — in place of `Option.ofObj`, `Option.ofNull`, and `Option.ofNullable`. This ensures a single uniform null-guarding call and avoids creating variants. When a `Nullable<T>` value type is passed, the function compiles without error but preserves the `Nullable<T>` wrapper inside `Some`, causing a type mismatch at the downstream consumption site. This is intentional — it is the compiler's signal that `Option.ofNullable` should be used.
 
 **Reflection-Free Code**
 
