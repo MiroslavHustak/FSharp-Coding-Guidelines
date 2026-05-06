@@ -115,7 +115,7 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (strongly recommended) are used.
+Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (recommended) are used.
 
 ## 7. LLM-based Copilots 
 
