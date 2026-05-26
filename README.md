@@ -1,6 +1,6 @@
 # **F# Coding Guidelines**
 
-How to make profitable F# programming extremely easy and avoid getting mired in a quagmire :-). 
+How to make profitable F# programming extremely simple and easy :-). 
 
 Company: Miroslav Husťák (sole owner)
 
