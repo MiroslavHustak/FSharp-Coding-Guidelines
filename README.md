@@ -143,7 +143,6 @@ Preferring plain SQL for database interactions, avoiding ORMs (such as Entity Fr
 
 **Vanilla SQL and SQL Type Providers**
 
-Be careful with SQL type providers as it is unsure how SQL type providers handle large databases. Consider using vanilla SQL instead. 
 Exercise caution when using SQL Type Providers. While they offer excellent compile-time safety, they can significantly increase compilation times or hit schema-mapping limitations when used against large, complex enterprise databases. Consider using vanilla SQL instead.  
 
 **Type Providers for Non-Database Scenarios**
