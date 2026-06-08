@@ -87,8 +87,8 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 
 **Code Organisation**
 
-A single logical unit that provides a complete big-picture overview of the component must be kept in one file — regardless of the number of lines of code or the number of functions it contains — and must never be split.
-Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances.
+A single logical unit that provides a complete big-picture overview of the component must be kept in one file and must never be split.
+Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (unmaintability, lost "big picture"). If the file seems to be too big, it may be a sign that a collection of units was created (instead of a single logical unit) and nested, independent MVU components shall be implemented.
 
 **Collections**
 
@@ -141,9 +141,10 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 Preferring plain SQL for database interactions, avoiding ORMs (such as Entity Framework Core) and micro-ORMs.
 
-**Vanilla SQL over SQL Type Providers**
+**Vanilla SQL and SQL Type Providers**
 
-SQL is written explicitly rather than through SQL type providers as it is unsure how SQL type providers handle large databases.
+Be careful with SQL type providers as it is unsure how SQL type providers handle large databases. Consider using vanilla SQL instead. 
+Exercise caution when using SQL Type Providers. While they offer excellent compile-time safety, they can significantly increase compilation times or hit schema-mapping limitations when used against large, complex enterprise databases. Consider using vanilla SQL instead.  
 
 **Type Providers for Non-Database Scenarios**
 
@@ -153,11 +154,7 @@ Type providers for CSV, XML, and JSON are preferred over equivalent .NET librari
 
 Keeping data separate from operations on data, in accordance with functional programming principles. This separation reinforces the decision to avoid mixing paradigms.
 
-## 10. FSharpPlus Library 
-
-Always consult your team members before using the FSharpPlus library in a project.
-
-## 11. Learning Lessons from Others 
+## 10. Learning Lessons from Others 
 
 Learn lessons from others:
 
