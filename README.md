@@ -83,7 +83,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 - No mutable state
 - No `if...then...else` constructs unless there is a compelling reason for using them (hopefully there is not :-))
 - No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
-- `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases.
+- `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases or unless there are other pragmatic reasons.
 
 **Code Organisation**
 
