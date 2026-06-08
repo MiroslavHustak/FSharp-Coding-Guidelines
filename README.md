@@ -88,7 +88,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 **Code Organisation**
 
 A single logical unit that provides a complete big-picture overview of the component must be kept in one file and must never be split.
-Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (unmaintability, lost "big picture"). If the file seems to be too big, it may be a sign that a collection of units was created (instead of a single logical unit) and nested, independent MVU components shall be implemented.
+Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (unmaintability, lost "big picture"). If the file seems to be too big, it may be a sign that a collection of units was created (instead of a single logical unit) or that nested, independent MVU components should have been implemented.
 
 **Collections**
 
