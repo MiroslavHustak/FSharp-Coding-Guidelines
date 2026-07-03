@@ -87,7 +87,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 
 **Code Organisation**
 
-A single logical unit that provides a complete big-picture overview of the component must be kept in one file and must never be split.
+A single logical unit that provides a complete big-picture overview of the component must be kept in one file and must never be split. Splitting can easily become a maintainability trap - a split logic is often hard to review, test, and evolve.
 Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (such as unmaintability or a "big picture" lost). If the file seems to be too big, it may be a sign that a collection of units was created (instead of a single logical unit) or that nested, independent MVU components should have been implemented.
 
 **Collections**
@@ -115,7 +115,7 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (recommended) are used. Stress testing is a must.
+Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (recommended) are used. 
 
 ## 7. LLM-based Copilots 
 
