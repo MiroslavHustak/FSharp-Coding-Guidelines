@@ -70,7 +70,7 @@ Using F#'s `async {}` workflows; avoiding C#-style `async/await`. `Async.Paralle
 
 **Functional Control Flow**
 
-Control flow is managed using pattern matching and active patterns instead of `if...then...else` constructs. Looping is typically implemented using either Haskell-like collection functions such as `map`, `iter`, or `fold`, or through tail-recursive functions or continuation-passing style (CPS) recursive functions, ensuring tail-call optimization or CPS compliance. Query expressions are not employed.
+Control flow is managed using pattern matching and active patterns instead of `if...then...else` constructs. Looping is typically implemented using either Haskell-like collection functions such as `map`, `iter`, or `fold`, or through tail-recursive functions or continuation-passing style (CPS) recursive functions (with an accumulator if needed), ensuring tail-call optimization or CPS compliance. Query expressions are not employed.
 
 **String Combination**
 
@@ -96,7 +96,7 @@ Immutable collections (`List`, `Seq`, `Set`, `Map`) shall be employed unless the
 
 **Single-Direction Dependency**
 
-Avoiding the use of the `and` keyword and recursive namespaces to preserve the single-direction dependency concept. 
+Avoid the `and` keyword and recursive namespaces to preserve single-direction dependencies. Exception: `and` is allowed between mutually recursive functions that form one inseparable algorithm (e.g. a CPS pair, one function walking a linear structure and delegating to a sibling for a branching one). This exception does not cover mutually recursive types.
 
 ## 5. Enhancing Type Safety
 
