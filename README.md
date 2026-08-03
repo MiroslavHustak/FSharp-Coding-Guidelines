@@ -96,7 +96,7 @@ Immutable collections (`List`, `Seq`, `Set`, `Map`) shall be employed unless the
 
 **Single-Direction Dependency**
 
-Avoid the `and` keyword and recursive namespaces to preserve single-direction dependencies. Exception: `and` is allowed between mutually recursive functions that form one inseparable algorithm (e.g. a CPS pair, one function walking a linear structure and delegating to a sibling for a branching one). This exception does not cover mutually recursive types.
+Avoid the `and` keyword and recursive namespaces to preserve single-direction dependencies. Exception: `and` is allowed between mutually recursive functions that form one inseparable algorithm (e.g. a CPS pair, one function walking a linear structure and delegating to a sibling for a branching one).
 
 ## 5. Enhancing Type Safety
 
