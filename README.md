@@ -157,10 +157,10 @@ Keeping data separate from operations on data, in accordance with functional pro
 
 Learn lessons from others:
 
-https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/?utm_source=tldrnewsletter
+[https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/?utm_source=tldrnewsletter](https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/?utm_source=tldrnewsletter)
 
-https://www.youtube.com/watch?v=ua6zxKSiQ_g
-
+[https://youtu.be/ua6zxKSiQ_g?t=591
+](https://youtu.be/ua6zxKSiQ_g?t=591)
 
 
 
