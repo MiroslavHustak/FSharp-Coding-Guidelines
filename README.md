@@ -127,7 +127,7 @@ Vibe coded output makes perfect sense for boilerplate-heavy or repetitive work, 
 
 **No Copilots for Code Review**
 
-Copilots have an uncanny talent for turning a simple code review into a full-scale disaster. And when the phenomenon called “model collapse” finally catches us, it will be a catastrophe of epic proportions. So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests. 
+Copilots have an uncanny talent for turning a simple code review into a full-scale disaster. And when the phenomenon called “model collapse” finally catches us, it will be a catastrophe of epic proportions :-). So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests. 
 
 ## 8. Async-by-Default
 
