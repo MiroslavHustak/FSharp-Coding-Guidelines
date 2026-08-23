@@ -137,7 +137,7 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 ## 9. Data Handling
 
-**No Fully-Fledged ORMs or Micro ORMs (Object-Relational Mappers)**
+**No Fully-Fledged or Micro Object-Relational Mappers (ORMs)**
 
 Preferring plain SQL for database interactions, avoiding ORMs (such as Entity Framework Core) and micro-ORMs.
 
