@@ -50,7 +50,7 @@ Prefer deserialisation libraries that require explicit field declarations such a
 
 **Separation of Pure and Impure Functions**
 
-When possible, separate pure and impure functions; you will thank yourself later. Avoid hiding impurity in function signatures. Consider using a non-monadic emulation of Haskell’s monads (such as IO or Writer) with a custom-made SCDU, such as `type Impure<'a> = Impure of (unit -> 'a)`.
+When possible, separate pure and impure functions; you will thank yourself later. Avoid hiding impurity in function signatures. Consider using a non-monadic emulation of Haskell’s monads with a custom-made SCDU, such as `type Impure<'a> = Impure of (unit -> 'a)`.
 
 **Functions, not Members**
 
