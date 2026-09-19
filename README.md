@@ -2,6 +2,8 @@
 
 How to make profitable F# programming extremely simple and easy :-). 
 
+These coding guidlines apply for typical F #code and do not apply for very special cases such as highly-performant code or heavy data processing, game dev, or graphics coded by very experienced developers. 
+
 Company: Miroslav Husťák (sole owner)
 
 
@@ -98,7 +100,6 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 - No mutable state
 - No `if...then...else` constructs
 - No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
-- `Array` to be immediately transformed into immutable collections at the boundary of the functional code unless retained for performance-sensitive use cases or unless there are other pragmatic reasons.
 
 **Code Organisation**
 
