@@ -144,6 +144,10 @@ Exercise caution when using LLM-based copilots. These tools can greatly enhance 
 
 Vibe coded output makes perfect sense for boilerplate-heavy or repetitive work, but shall never be dropped unchanged — always verify, adapt, and refactor. Treat it like a copy-pasted code from Stack Overflow. Tag significant copilot-assisted sections so that the code reviewers can apply extra scrutiny where it matters.
 
+**Copilot-assisted review preparation**
+
+Copilot-assisted review preparation is acceptable, but exercise caution.
+
 **No Copilots for Final Code Review**
 
 Copilots have an uncanny talent for turning a simple code review into a full-scale disaster. And when the phenomenon called “model collapse” finally catches us, it will be a catastrophe of epic proportions :-). So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests. 
