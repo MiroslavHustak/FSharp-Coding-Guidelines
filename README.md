@@ -41,7 +41,7 @@ Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in norma
 
 It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
 
-The same applies to `Option.get` and `Value` on `Nullable<T>`.
+The same applies to `Option.get` and `.Value` on `Nullable<T>`.
 
 **Reflection-Free Code**
 
