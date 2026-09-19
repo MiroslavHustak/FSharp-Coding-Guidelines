@@ -2,7 +2,7 @@
 
 How to make profitable F# programming extremely simple and easy :-). 
 
-These coding guidlines apply for typical F #code and do not apply for very special cases such as highly-performant code or heavy data processing, game dev, or graphics coded by very experienced developers. 
+These coding guidelines apply for typical F# code and do not apply for very special cases such as highly-performant code or heavy data processing, game dev, or graphics coded by very experienced developers. 
 
 Company: Miroslav Husťák (sole owner)
 
@@ -37,7 +37,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 Introducing `nulls` into F# code (such as `KeywordResults = null`) is strictly prohibited. If you think this rule is too strict, look at your C# debugging history.
 
-**No `.Value` on `Options`**
+**No `.Value` on `Option`**
 
 Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. It is unsafe when the  `Option` is `None` and turns an explicit absence into a runtime exception - the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
 
@@ -61,9 +61,9 @@ When evaluating third-party libraries, distinguish between two cases:
 - Reflection hidden behind a clean API boundary — acceptable, provided it does not leak into your code, does not degrade performance in critical paths, and a reflection-free alternative of comparable quality does not exist.
 - Reflection that surfaces in your code — for example, through attributes, runtime type tokens, or untyped expressions — is prohibited on the same grounds as reflection in application logic.
 
-**Explicit Deserialisation over Implicit Mapping**
+**Explicit Deserialization over Implicit Mapping**
 
-Prefer deserialisation libraries that require explicit field declarations such as `Thoth.Json.Net`, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
+Prefer deserialization libraries that require explicit field declarations such as `Thoth.Json.Net`, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
 
 
 ## 4. Code Structure & Patterns
@@ -107,7 +107,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 **Code Organisation**
 
 A single logical unit that provides a complete big-picture overview of the component must be kept in one file and must never be split. Splitting can easily become a maintainability trap - a split logic is often hard to review, test, and evolve.
-Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (such as unmaintability or a "big picture" lost). If the file seems to be too big, it may be a sign (and usually is) that a collection of units was created (instead of a single logical unit) or that nested, independent MVU components should have been implemented.
+Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (such as unmaintainability or a "big picture" lost). If the file seems to be too big, it may be a sign (and usually is) that a collection of units was created (instead of a single logical unit) or that nested, independent MVU components should have been implemented.
 
 **Collections**
 
