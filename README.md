@@ -33,6 +33,14 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 `Option.ofNull'`, a specific adaptation of FsToolkit's `Option.ofNull` and FSharp.Core's `Option.ofObj`, is used consistently for all nullable .NET types — both reference types and `Nullable<T>` value types — in place of `Option.ofObj`, `Option.ofNull`, and `Option.ofNullable`. This ensures a single uniform null-guarding call and avoids creating variant code. When a `Nullable<T>` value type is passed, the function compiles without error but preserves the `Nullable<T>` wrapper inside `Some`, causing a type mismatch at the downstream consumption site. This is intentional — it is the compiler's signal that `Option.ofNullable` should be used.
 
+**No `.Value` on `Options`**
+
+Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. At runtime `None` is represented as `null`, so calling `.Value` on a `None` fails with a `NullReferenceException`, the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
+
+It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
+
+The same applies to `Option.get` and `Value` on `Nullable<T>`.
+
 **Reflection-Free Code**
 
 Reflection is dangerous because it bypasses the type system at runtime; therefore it is prohibited in application logic.
