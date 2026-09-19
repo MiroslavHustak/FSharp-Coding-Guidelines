@@ -39,7 +39,7 @@ Introducing `nulls` into F# code (such as `KeywordResults = null`) is strictly p
 
 **No `.Value` on `Options`**
 
-Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. At runtime `None` is represented as `null`, so calling `.Value` on a `None` fails with a `NullReferenceException`, the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
+Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. It is unsafe when the  `Option` is `None` and turns an explicit absence into a runtime exception - the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
 
 It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
 
@@ -47,7 +47,10 @@ The same applies to `Option.get` and `.Value` on `Nullable<T>`.
 
 **No `Nullable<T>` in F# Code**
 
-Nullable<T> is C#'s substitute for Option, and Nullable() is a null in disguise. It must not appear in F# code: no F# function, record field, or DU case may take or return it.
+Nullable<T> is a .NET interop representation of an optional value. Use Option<T> in F# application and domain code.
+
+Nullable<T> must not appear in F# code: no F# function, record field, or DU case may take or return it. Convert it to Option<T> at .NET interop boundaries, and convert back only when an external API requires it.
+
 Hand-rolled match ... Some v -> Nullable(v) | None -> Nullable() conversions are strictly prohibited.
 
 **Reflection-Free Code**
