@@ -43,6 +43,11 @@ It may be tolerated for really quick throwaway testing, when your strict functio
 
 The same applies to `Option.get` and `.Value` on `Nullable<T>`.
 
+**No `Nullable<T>` in F# Code**
+
+Nullable<T> is C#'s substitute for Option, and Nullable() is a null in disguise. It must not appear in F# code: no F# function, record field, or DU case may take or return it.
+Hand-rolled match ... Some v -> Nullable(v) | None -> Nullable() conversions are strictly prohibited.
+
 **Reflection-Free Code**
 
 Reflection is dangerous because it bypasses the type system at runtime; therefore it is prohibited in application logic.
