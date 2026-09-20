@@ -71,7 +71,7 @@ When evaluating third-party libraries, distinguish between two cases:
 
 **Explicit Deserialization over Implicit Mapping**
 
-Prefer deserialization libraries that require explicit field declarations, such as Thoth.Json.Net, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
+Prefer deserialization libraries that require explicit field declarations, such as `Thoth.Json.Net`, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
 
 Exception: type providers infer the schema from a sample, and erased JSON providers typically fail lazily, only when your code accesses a field missing from the real data. Use  type providers where you control the shape of the data or a representative sample is guaranteed. For external or untrusted payloads, use explicit decoders.
 
