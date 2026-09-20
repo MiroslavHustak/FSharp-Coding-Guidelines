@@ -19,7 +19,7 @@ No use of OOP features such as classes, inheritance, or interfaces unless requir
 
 **No Mixing of Paradigms**
 
-No blending of OOP and functional paradigms. Functional purity is preferred.
+No blending of OOP and functional paradigms. Functional purity is preferred. Blending violates the KISS principle.
 
 ## 3. Error Handling and Reflection
 
