@@ -1,8 +1,8 @@
 # **F# Coding Guidelines**
 
-How to make profitable F# programming extremely simple and easy :-). 
+How to make profitable F# programming extremely simple, easy, joyful and without any entry in the debugging history (there will be nothing to debug - the compiler will not let you that far). 
 
-These coding guidelines apply for typical F# code and do not apply for very special cases such as highly-performant code or heavy data processing, game dev, or graphics coded by very experienced developers. 
+These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphics coded by very experienced developers. 
 
 Company: Miroslav Husťák (sole owner)
 
@@ -35,7 +35,9 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 `Option.ofNull'`, a specific adaptation of FsToolkit's `Option.ofNull` and FSharp.Core's `Option.ofObj`, is used consistently for all nullable .NET types — both reference types and `Nullable<T>` value types — in place of `Option.ofObj`, `Option.ofNull`, and `Option.ofNullable`. This ensures a single uniform null-guarding call and avoids creating variant code. When a `Nullable<T>` value type is passed, the function compiles without error but preserves the `Nullable<T>` wrapper inside `Some`, causing a type mismatch at the downstream consumption site. This is intentional — it is the compiler's signal that `Option.ofNullable` should be used.
 
-Introducing `nulls` into F# code (such as `KeywordResults = null`) is strictly prohibited. If you think this rule is too strict, look at your C# debugging history.
+**Introducing nulls into F# code**
+
+Introducing `nulls` into F# code is strictly prohibited. If you think this rule is too strict, look at your C# debugging history. `Null` is a .NET concept, and F# types do not admit `null` as a value, so the compiler rejects it. `Nulls` can therefore only creep in via .NET types: string, arrays, .NET collections and classes, BCL and third-party return values, and F# classes marked `[<AllowNullLiteral>]`. Assigning `null` to any of these (e.g. `KeywordResults = null` where `KeywordResults` is a string, array, or .NET collection) is prohibited. Represent absence with `option` (or an empty collection or string) instead, and convert `nulls` at the boundary where .NET values enter F# code. Do not use `[<AllowNullLiteral>]` on your own types. 
 
 **No `.Value` on `Option`**
 
@@ -43,28 +45,39 @@ Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in norma
 
 It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
 
-The same applies to `Option.get` and `.Value` on `Nullable<T>`.
+The same applies to `Option.get`.
 
 **No `Nullable<T>` in F# Code**
 
-Nullable<T> is a .NET interop representation of an optional value. Use Option<T> in F# application and domain code.
+`Nullable<T>` is a .NET interop representation of an optional value and must not appear in F# code. Convert it to `Option<T>` at .NET interop boundaries (see the relevant rule above).
 
-Nullable<T> must not appear in F# code: no F# function, record field, or DU case may take or return it. Convert it to Option<T> at .NET interop boundaries, and convert back only when an external API requires it.
-
-Hand-rolled match ... Some v -> Nullable(v) | None -> Nullable() conversions are strictly prohibited.
+Hand-rolled `match ... Some v -> Nullable(v) | None -> Nullable()` conversions are strictly prohibited.
 
 **Reflection-Free Code**
 
-Reflection is dangerous because it bypasses the type system at runtime; therefore it is prohibited in application logic.
+Reflection moves type checking from compile time to runtime. Renamed members, changed signatures and missing cases become runtime exceptions, string-based member access is invisible to refactoring tools, and reflection can bypass encapsulation and F# invariants (private constructors, immutability, non-null guarantees). It also conflicts with trimming and Native AOT. Therefore reflection is prohibited in application logic.
+
+Reflection means the `System.Reflection` APIs (`GetMethod`, `GetProperty`, `Invoke`, `Activator.CreateInstance`, and the like), `FSharp.Reflection`, and reflection-driven features such as `%A`. Type tests (`:?`), `typeof<T>` not passed to reflection APIs, `nameof`, and attributes consumed by the compiler are not reflection. Prefer `nameof` and source generators over their reflective equivalents.
 
 When evaluating third-party libraries, distinguish between two cases:
-- Reflection hidden behind a clean API boundary — acceptable, provided it does not leak into your code, does not degrade performance in critical paths, and a reflection-free alternative of comparable quality does not exist.
-- Reflection that surfaces in your code — for example, through attributes, runtime type tokens, or untyped expressions — is prohibited on the same grounds as reflection in application logic.
+- **Reflection hidden behind a clean API boundary** is acceptable if all of the following hold:
+  - It does not leak into your code.
+  - It does not degrade performance in critical paths.
+  - It is compatible with trimming/AOT, if you use them.
+  - No reflection-free alternative of comparable quality exists (prefer source-generated variants).
+  - Values produced by reflection-based deserialization are validated at the boundary, because such libraries can violate F# invariants, including nullness.
+- **Reflection that surfaces in your code** is prohibited on the same grounds as reflection in application logic. This means your code must not pass `Type` values, `MethodInfo`, or member names as strings to reflect over. Attributes that are a library's documented public contract are not in themselves a violation.
 
 **Explicit Deserialization over Implicit Mapping**
 
 Prefer deserialization libraries that require explicit field declarations such as `Thoth.Json.Net`, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
 
+**`%A` Format Specifier**
+
+`%A` uses reflection at runtime, so it is an exception to the Reflection-Free Code rule, allowed only in test code, only for diagnostics, and sparingly.
+
+- Production: Prohibited. It is slow, allocation-heavy, incompatible with trimming/AOT, and its output is neither stable nor complete (large structures are truncated). Use explicit formatting (`%s`, `%d`, `%O`) or a structured logger.
+- Tests: Use with caution, preferably not in loops, generators, or on large collections.
 
 ## 4. Code Structure & Patterns
 
@@ -107,7 +120,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 **Code Organisation**
 
 A single logical unit that provides a complete big-picture overview of the component must be kept in one file and must never be split. Splitting can easily become a maintainability trap - a split logic is often hard to review, test, and evolve.
-Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (such as unmaintainability or a "big picture" lost). If the file seems to be too big, it may be a sign (and usually is) that a collection of units was created (instead of a single logical unit) or that nested, independent MVU components should have been implemented.
+Code that implements one complete MVU (Model-View-Update) logic per UI component is considered a single logical unit and must not be split under any circumstances as the consequences can be dire (such as unmaintainability or a "big picture" lost). If the file seems to be too big, it may be a sign (and usually is) that a collection of logical units was created (instead of a single logical unit) or that nested, independent MVU components should have been implemented.
 
 **Collections**
 
