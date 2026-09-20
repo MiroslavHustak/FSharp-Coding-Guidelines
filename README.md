@@ -117,7 +117,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 - No LINQ expressions
 - No query expressions
 - No mutable state
-- No `if...then...else` constructs
+- No `if...then...else` constructs (most of potential ones are actually monads or monad-like structures anyway)
 - No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
 
 **Code Organisation**
