@@ -30,7 +30,7 @@ All exceptions and nulls originating from .NET libraries are immediately transfo
 
 **No Exception-Based Flow**
 
-Errors are propagated using types (predominantly the `Result` type), not exceptions. Raising exceptions is avoided unless there is a compelling reason.
+Errors are propagated using types (predominantly the `Result` type), not exceptions. Raising exceptions is avoided unless there is a compelling reason (that I have not experienced yet).
 
 **Handling of Nulls Creeping from .NET Libraries**
 
