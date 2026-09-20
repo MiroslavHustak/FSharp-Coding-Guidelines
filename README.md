@@ -9,7 +9,7 @@ Company: Miroslav Husťák (sole owner)
 
 ## 1. Philosophy
 
-Following a pure functional programming approach, avoiding object-oriented features and mutibility unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
+Following a pure functional programming approach, avoiding object-oriented features and mutability unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
 
 ## 2. General Principles
 
@@ -70,7 +70,9 @@ When evaluating third-party libraries, distinguish between two cases:
 
 **Explicit Deserialization over Implicit Mapping**
 
-Prefer deserialization libraries that require explicit field declarations such as `Thoth.Json.Net`, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
+Prefer deserialization libraries that require explicit field declarations, such as Thoth.Json.Net, so that structural mismatches between expected and actual data are caught eagerly rather than silently swallowed.
+
+Exception: type providers infer the schema from a sample, and erased JSON providers typically fail lazily, only when your code accesses a field missing from the real data. Use  type providers where you control the shape of the data or a representative sample is guaranteed. For external or untrusted payloads, use explicit decoders.
 
 **`%A` Format Specifier**
 
@@ -183,7 +185,7 @@ Exercise caution when using SQL Type Providers. While they offer excellent compi
 
 **Type Providers for Non-Database Scenarios**
 
-Type providers for CSV, XML, and JSON are preferred over equivalent .NET libraries due to better type inference and significantly less boilerplate.
+Type providers for CSV, XML, and JSON are preferred over equivalent .NET libraries (subject to the conditions in the **Explicit Deserialization over Implicit Mapping** sub-entry) due to better type inference and significantly less boilerplate.
 
 **Separation of Data and Operations on Data**
 
