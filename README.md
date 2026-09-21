@@ -1,6 +1,6 @@
 # **F# Coding Guidelines**
 
-How to make profitable F# programming extremely simple, easy, joyful and without any entry in your debugging history (there will be nothing to debug - the compiler will not let you that far). 
+How to make profitable F# programming extremely simple, easy, joyful and without any entry in your debugging history. 
 
 These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphics coded by very experienced developers. 
 
