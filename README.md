@@ -152,7 +152,11 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (recommended) are used. For performance, load, stress, and security testing, standard industry practices apply.
 
-## 7. LLM-based Copilots 
+## 7. Logging
+
+Use any appropriate logging library. Creating a custom logging system is acceptable.
+
+## 8. LLM-based Copilots 
 
 **Use of LLM-Based Copilots**
 
@@ -167,14 +171,13 @@ Copilot-assisted review preparation is acceptable, but exercise caution.
 **No Copilots for Final Code Review**
 
 Copilots have an uncanny talent for turning a simple code review into a full-scale disaster. And when the phenomenon called “model collapse” finally catches us, it will be a catastrophe of epic proportions :-). So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests. 
-
-## 8. Async-by-Default
+98. Async-by-Default
 
 **Preferring Asynchronous Versions**
 
 If an asynchronous variant of an API exists, it is preferred. Adopting the async model opens up future possibilities — such as cancellation or non-blocking constructs with minimal refactoring. That said, caution should be exercised when using asynchronous variants within parallel loops.
 
-## 9. Data Handling
+## 10. Data Handling
 
 **No Fully-Fledged or Micro Object-Relational Mappers (ORMs)**
 
@@ -192,7 +195,7 @@ Type providers for CSV, XML, and JSON are preferred over equivalent .NET librari
 
 Keeping data separate from operations on data, in accordance with functional programming principles. This separation reinforces the decision to avoid mixing paradigms.
 
-## 10. Learning Lessons from Others 
+## 11. Learning Lessons from Others 
 
 Learn lessons from others:
 
