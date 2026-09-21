@@ -6,7 +6,7 @@ These coding guidelines apply for typical F# code created by CS-illiterate dumbs
 
 Company: Miroslav Husťák (sole owner)
 
-*A note for humans: the entries reflect my experience with coding and the problems I ran into (and, to a lesser extent, issues I noticed in code written by others such as introducing of `nulls` or `.Value` on `Option` types). No idea for an entry was proposed by LLM-based copilots; they only helped with wording, structure and some explanatory remarks.*
+*A note for humans: the entries reflect my experience with coding and the problems I ran into (and, to a lesser extent, issues I noticed in code written by others such as introducing of nulls or `.Value` on `Option` types). No idea for an entry was proposed by LLM-based copilots; they only helped with wording, structure and some explanatory remarks.*
 
 ## 1. Philosophy
 
