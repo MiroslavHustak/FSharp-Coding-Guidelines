@@ -36,7 +36,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 `Option.ofNull'`, a specific adaptation of FsToolkit's `Option.ofNull` and FSharp.Core's `Option.ofObj`, is used consistently for all nullable .NET types — both reference types and `Nullable<T>` value types — in place of `Option.ofObj`, `Option.ofNull`, and `Option.ofNullable`. This ensures a single uniform null-guarding call and avoids creating variant code. When a `Nullable<T>` value type is passed, the function compiles without error but preserves the `Nullable<T>` wrapper inside `Some`, causing a type mismatch at the downstream consumption site. This is intentional — it is the compiler's signal that `Option.ofNullable` should be used.
 
-**Introducing nulls into F# code**
+**Introducing Nulls into F# Code**
 
 Introducing `nulls` into F# code is strictly prohibited. If you think this rule is too strict, look at your C# debugging history. `Null` is a .NET concept, and F# types do not admit `null` as a value, so the compiler rejects it. `Nulls` can therefore only creep in via .NET types: string, arrays, .NET collections and classes, BCL and third-party return values, and F# classes marked `[<AllowNullLiteral>]`. Assigning `null` to any of these (e.g. `KeywordResults = null` where `KeywordResults` is a string, array, or .NET collection) is prohibited. Represent absence with `option` (or an empty collection or string if appropriate) instead, and convert `nulls` at the boundary where .NET values enter F# code. Do not use `[<AllowNullLiteral>]` on your own types. 
 
