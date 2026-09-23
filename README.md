@@ -2,7 +2,7 @@
 
 How to make profitable F# programming extremely simple, easy, joyful and without any entry in your debugging history. 
 
-These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphics coded by very experienced developers. 
+These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me, and do not apply to experienced and smart developers and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphic. 
 
 Company: Miroslav Husťák (sole owner)
 
