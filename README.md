@@ -20,7 +20,7 @@ No use of OOP features such as classes, inheritance, or interfaces unless requir
 
 **No Mixing of Paradigms**
 
-No blending of OOP and functional paradigms. Functional purity is preferred. Blending blatantly violates the KISS principle.
+No blending of OOP and functional paradigms. Functional purity is preferred. Blending blatantly violates the KISS principle and makes no sense from the business point of view - why invest time and money into learning F# when you can easily create "mishmash" in languages you already know?
 
 ## 3. Error Handling and Reflection
 
@@ -102,7 +102,7 @@ When defining custom computation expressions, ensure that `Bind` satisfies monad
 
 **Asynchronous Code**
 
-Use F#'s `async {}` workflows - C#-style `async/await` is prohibited. `Async.Parallel` is preferred for concurrency. .NET's `Task` or `Array.Parallel` may be used for performance-sensitive, CPU-bound operations.
+Use F#'s `async {}` workflows - C#-style `async/await` is prohibited. `Async.Parallel` is preferred for concurrency. .NET's `Task` or `Array.Parallel` may be used for performance-sensitive, CPU-bound operations, or at .NET boundaries.
 
 **Functional Control Flow**
 
@@ -118,7 +118,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 - No query expressions
 - No mutable state
 - No `if...then...else` constructs as they hurt readability (most of potential ones are actually monads or monad-like structures anyway)
-- No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think.)
+- No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think - when you bump into problems with tuples, for example, you will switch to `List.iter` for the rest of your programming life anyway.)
 
 **Code Organisation**
 
