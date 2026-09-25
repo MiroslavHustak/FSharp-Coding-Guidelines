@@ -5,7 +5,7 @@ How to make profitable F# programming extremely simple, easy, joyful and without
 These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me, do not apply to experienced or smart developers and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphic. 
 
 > [!NOTE]
-> The entries reflect my own experience with coding and the problems I ran into — and, to a lesser extent, issues I noticed in code written by others, such as introducing nulls or using `.Value` on `Option` types, both cautioned against below. **No entry's idea was proposed by an LLM-based copilot**; they only helped with wording, structure, and some explanatory remarks.
+> The entries reflect my own experience with coding and the problems I ran into — and, to a lesser extent, issues I noticed in code written by others, such as introducing `nulls` or using `.Value` on `Option` types, both cautioned against below. **No entry's idea was proposed by an LLM-based copilot**; they only helped with wording, structure, and some explanatory remarks.
 > 
 
 ## 1. Philosophy
@@ -26,7 +26,7 @@ No blending of OOP and functional paradigms. Functional purity is preferred. Ble
 
 **Defensive Coding**
 
-All exceptions and nulls originating from .NET libraries are immediately transformed into `Result` or `Option` types at the boundary of the functional code.
+All exceptions and `nulls` originating from .NET libraries are immediately transformed into `Result` or `Option` types at the boundary of the functional code.
 
 **No Exception-Based Flow**
 
