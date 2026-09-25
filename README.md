@@ -2,7 +2,7 @@
 
 How to make profitable F# programming extremely simple, easy, joyful and without any entry in your debugging history. 
 
-These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me, do not apply to experienced or smart developers and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphic. 
+These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me, they do not apply to experienced or smart developers and they do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphic. 
 
 > [!NOTE]
 > The entries reflect my own experience with coding and the problems I ran into — and, to a lesser extent, issues I noticed in code written by others, such as introducing `nulls` or using `.Value` on `Option` types, both cautioned against below. **No entry's idea was proposed by an LLM-based copilot**; they only helped with wording, structure, and some explanatory remarks.
