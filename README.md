@@ -4,8 +4,6 @@ How to make profitable F# programming extremely simple, easy, joyful and without
 
 These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me, do not apply to experienced or smart developers and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphic. 
 
-Company: Miroslav Husťák (sole owner)
-
 *A note for humans: The entries reflect my experience with coding and the problems I ran into (and, to a lesser extent, issues I noticed in code written by others such as introducing nulls or `.Value` on `Option` types). No idea for an entry was proposed by LLM-based copilots; they only helped with wording, structure and some explanatory remarks.*
 
 ## 1. Philosophy
@@ -38,7 +36,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 **Introducing Nulls into F# Code**
 
-Introducing `nulls` into F# code is strictly prohibited. If you think this rule is too strict, look at your C# debugging history. `Null` is a .NET concept, and F# types do not admit `null` as a value, so the compiler rejects it. `Nulls` can therefore only creep in via .NET types: string, arrays, .NET collections and classes, BCL and third-party return values, and F# classes marked `[<AllowNullLiteral>]`. Assigning `null` to any of these (e.g. `KeywordResults = null` where `KeywordResults` is a string, array, or .NET collection) is prohibited. Represent absence with `option` (or an empty collection or string if appropriate) instead, and convert `nulls` at the boundary where .NET values enter F# code. Do not use `[<AllowNullLiteral>]` on your own types. 
+Introducing `nulls` into F# code is **strictly prohibited**. If you think this rule is too strict, look at your C#/Java/C++ (whatever) debugging history. F# types do not admit `null` as a value, so the compiler rejects it. `Nulls` can therefore only creep in via .NET types: string, arrays, .NET collections and classes, BCL and third-party return values, and F# classes marked `[<AllowNullLiteral>]`. Assigning `null` to any of these (for example `KeywordResults = null` where `KeywordResults` is a string, array, or .NET collection) **is prohibited**. Represent absence with `Option` (or an empty collection or string if appropriate, but with caution) instead, and convert `nulls` at the boundary where .NET values enter F# code. Do not use `[<AllowNullLiteral>]` on your own types. 
 
 **No `.Value` on `Option`**
 
@@ -150,7 +148,7 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (recommended) are used. For performance, load, stress, and security testing, standard industry practices apply.
+Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (mandated) are used. For performance, load, stress, and security testing, standard industry practices apply.
 
 ## 7. Logging
 
@@ -182,11 +180,11 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 **No Fully-Fledged or Micro Object-Relational Mappers (ORMs)**
 
-Preferring plain SQL for database interactions, avoiding ORMs (such as Entity Framework Core) and micro-ORMs.
+Avoid ORMs and micro-ORMs (such as Entity Framework Core) in favour of plain SQL. All database interactions must be strictly parameterised — SQL injection is unacceptable.
 
 **Vanilla SQL and SQL Type Providers**
 
-Exercise caution when using SQL Type Providers. While they offer excellent compile-time safety, they can significantly increase compilation times or hit schema-mapping limitations when used against large, complex enterprise databases (consider using vanilla SQL instead).  
+Exercise caution when using SQL Type Providers. While they offer excellent compile-time safety, they can significantly increase compilation times or hit schema-mapping limitations when used against large, complex enterprise databases (consider using vanilla SQL instead - ready-made templates are here: https://github.com/MiroslavHustak/Excel_JSON_XML_To_DB).  
 
 **Type Providers for Non-Database Scenarios**
 
