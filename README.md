@@ -4,7 +4,9 @@ How to make profitable F# programming extremely simple, easy, joyful and without
 
 These coding guidelines apply for typical F# code created by CS-illiterate dumbs like me, do not apply to experienced or smart developers and do not apply for very special cases such as highly-performant code or heavy data processing, game development, or graphic. 
 
-*A note for humans: The entries reflect my experience with coding and the problems I ran into (and, to a lesser extent, issues I noticed in code written by others such as introducing nulls or `.Value` on `Option` types). No idea for an entry was proposed by LLM-based copilots; they only helped with wording, structure and some explanatory remarks.*
+> [!NOTE]
+> The entries reflect my own experience with coding and the problems I ran into — and, to a lesser extent, issues I noticed in code written by others, such as introducing nulls or using `.Value` on `Option` types, both cautioned against below. **No entry's idea was proposed by an LLM-based copilot**; they only helped with wording, structure, and some explanatory remarks.
+> 
 
 ## 1. Philosophy
 
@@ -34,23 +36,25 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 
 `Option.ofNull'`, a specific adaptation of FsToolkit's `Option.ofNull` and FSharp.Core's `Option.ofObj`, is used consistently for all nullable .NET types — both reference types and `Nullable<T>` value types — in place of `Option.ofObj`, `Option.ofNull`, and `Option.ofNullable`. This ensures a single uniform null-guarding call and avoids creating variant code. When a `Nullable<T>` value type is passed, the function compiles without error but preserves the `Nullable<T>` wrapper inside `Some`, causing a type mismatch at the downstream consumption site. This is intentional — it is the compiler's signal that `Option.ofNullable` should be used.
 
-**Introducing Nulls into F# Code**
-
-Introducing `nulls` into F# code is **strictly prohibited**. If you think this rule is too strict, look at your C#/Java/C++ (whatever) debugging history. F# types do not admit `null` as a value, so the compiler rejects it. `Nulls` can therefore only creep in via .NET types: string, arrays, .NET collections and classes, BCL and third-party return values, and F# classes marked `[<AllowNullLiteral>]`. Assigning `null` to any of these (for example `KeywordResults = null` where `KeywordResults` is a string, array, or .NET collection) **is prohibited**. Represent absence with `Option` (or an empty collection or string if appropriate, but with caution) instead, and convert `nulls` at the boundary where .NET values enter F# code. Do not use `[<AllowNullLiteral>]` on your own types. 
-
-**No `.Value` on `Option`**
-
-Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. It is unsafe when the  `Option` is `None` and turns an explicit absence into a runtime exception - the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
-
-It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
-
-The same applies to `Option.get`.
-
-**No `Nullable<T>` in F# Code**
-
-`Nullable<T>` is a .NET interop representation of an optional value and must not appear in F# code. Convert it to `Option<T>` at .NET interop boundaries (see the relevant rule above).
-
-Hand-rolled `match ... Some v -> Nullable(v) | None -> Nullable()` conversions are strictly prohibited.
+> [!CAUTION]
+> **Introducing Nulls into F# Code**
+>
+> Introducing `nulls` into F# code is **strictly prohibited**. If you think this rule is too strict, look at your C#/Java/C++ (whatever) debugging history. F# types do not admit `null` as a value, so the compiler rejects it. `Nulls` can therefore only creep in via .NET types: string, arrays, .NET collections and classes, BCL and third-party return values, and F# classes marked `[<AllowNullLiteral>]`. Assigning `null` to any of these (for example `KeywordResults = null` where `KeywordResults` is a string, array, or .NET collection) **is prohibited**. Represent absence with `Option` (or an empty collection or string if appropriate, but with caution) instead, and convert `nulls` at the boundary where .NET values enter F# code. Do not use `[<AllowNullLiteral>]` on your own types.
+>
+> **No `.Value` on `Option`**
+>
+> Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. It is unsafe when the `Option` is `None` and turns an explicit absence into a runtime exception - the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
+>
+> It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
+>
+> The same applies to `Option.get`.
+>
+> **No `Nullable<T>` in F# Code**
+>
+> `Nullable<T>` is a .NET interop representation of an optional value and must not appear in F# code. Convert it to `Option<T>` at .NET interop boundaries (see the relevant rule above).
+>
+> Hand-rolled `match ... Some v -> Nullable(v) | None -> Nullable()` conversions are strictly prohibited.
+> 
 
 **Reflection-Free Code**
 
@@ -184,7 +188,7 @@ Avoid ORMs and micro-ORMs (such as Entity Framework Core) in favour of plain SQL
 
 **Vanilla SQL and SQL Type Providers**
 
-Exercise caution when using SQL Type Providers. While they offer excellent compile-time safety, they can significantly increase compilation times or hit schema-mapping limitations when used against large, complex enterprise databases (consider using vanilla SQL instead - ready-made templates are here: https://github.com/MiroslavHustak/Excel_JSON_XML_To_DB).  
+Exercise caution when using SQL type providers. While they offer excellent compile-time safety, they can significantly increase compilation times or hit schema-mapping limitations when used against large, complex enterprise databases (consider using vanilla SQL instead — ready-made templates can be cloned from here: https://github.com/MiroslavHustak/Excel_JSON_XML_To_DB).
 
 **Type Providers for Non-Database Scenarios**
 
