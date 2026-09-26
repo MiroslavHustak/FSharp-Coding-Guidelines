@@ -184,7 +184,7 @@ If an asynchronous variant of an API exists, it is preferred. Adopting the async
 
 **No Fully-Fledged or Micro Object-Relational Mappers (ORMs)**
 
-Avoid ORMs and micro-ORMs (such as Entity Framework Core) in favour of plain SQL. All database interactions must be strictly parameterised — SQL injection is unacceptable.
+Avoid ORMs and micro-ORMs (such as Entity Framework Core) in favour of plain SQL. All database interactions in the plain SQL code must be strictly parameterised — SQL injection is unacceptable.
 
 **Vanilla SQL and SQL Type Providers**
 
