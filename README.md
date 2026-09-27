@@ -43,7 +43,7 @@ Errors are propagated using types (predominantly the `Result` type), not excepti
 >
 > **No `.Value` on `Option`**
 >
-> Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. It is unsafe when the `Option` is `None` and turns an explicit absence into a runtime exception - the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`.
+> Accessing `.Value` on an `Option` (`newValueOpt.Value`) is unacceptable in normal code. It is unsafe when the `Option` is `None` and turns an explicit absence into a runtime exception - the very thing `Option` exists to prevent. F# is flooded with features for dealing with `Option` types, such as pattern matching or `Option.map/bind/iter, Option.defaultValue, Option.orElseWith` or the `option {} CE`, so no need to use `.Value`.
 >
 > It may be tolerated for really quick throwaway testing, when your strict functional boss is not looking and you can't be bothered to type out a proper match. It must never appear in committed code.
 >
