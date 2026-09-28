@@ -152,7 +152,7 @@ Using `ignore` with type parameters (for example `ignore<FileInfo>`) catches par
 
 **Testing Philosophy**
 
-Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (mandated) are used. For performance, load, stress, and security testing, standard industry practices apply.
+Pure functions are assumed to be correct by design especially when type-driven development is applied. Unit tests are optional for these; instead, integration tests (if at all necessary) and PBT (mandated) are used. For performance, load, stress, security, and canary testing, standard industry practices apply.
 
 ## 7. Logging
 
