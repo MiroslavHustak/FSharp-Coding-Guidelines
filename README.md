@@ -104,11 +104,11 @@ When defining custom computation expressions, ensure that `Bind` satisfies monad
 
 **Asynchronous Code**
 
-Use F#'s `async {}` workflows - C#-style `async/await` is prohibited. `Async.Parallel` is preferred for concurrency. .NET's `Task` or `Array.Parallel` may be used for performance-sensitive, CPU-bound operations, or at .NET boundaries.
+Use F#'s asynchronous workflows - C#-style `async/await` is prohibited. `Async.Parallel` is preferred for concurrency. .NET's `Task` or `Array.Parallel` may be used for performance-sensitive, CPU-bound operations, or at .NET boundaries.
 
 **Functional Control Flow**
 
-Control flow is managed using pattern matching and active patterns instead of `if...then...else` constructs. Looping is typically implemented using either Haskell-like collection functions such as `map`, `iter`, or `fold`, or through tail-recursive functions or continuation-passing style (CPS) recursive functions (with an accumulator if needed), ensuring tail-call optimization or CPS compliance. Query expressions are not employed.
+Control flow is managed using pattern matching and active patterns instead of `if...then...else` constructs (see the sub-entry **Avoiding Imperative Constructs**). Looping is typically implemented using either Haskell-like collection functions such as `map`, `iter`, or `fold`, or through tail-recursive functions or continuation-passing style (CPS) recursive functions (with an accumulator if needed), ensuring tail-call optimization or CPS compliance. Query expressions are not employed.
 
 **String Combination**
 
