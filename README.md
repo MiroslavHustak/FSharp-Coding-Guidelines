@@ -166,7 +166,7 @@ Exercise caution when using LLM-based copilots. These tools can greatly enhance 
 
 Vibe coded output makes perfect sense for boilerplate-heavy or repetitive work, but shall never be dropped unchanged — always verify, adapt, and refactor. Treat it like a copy-pasted code from Stack Overflow. Tag significant copilot-assisted sections so that the code reviewers can apply extra scrutiny where it matters.
 
-Consider adopting Jiří Šlachta's [Rules for AI-Assisted Development](https://github.com/jslachta/ai-rules-oss-poc/blob/main/en/README.md) as team standards.
+Consider adopting [Jiří Šlachta's](https://www.linkedin.com/in/jirislachta/) [**Rules for AI-Assisted Development**](https://github.com/jslachta/ai-rules-oss-poc/blob/main/en/README.md) as team standards.
 
 **Copilot-assisted review preparation**
 
