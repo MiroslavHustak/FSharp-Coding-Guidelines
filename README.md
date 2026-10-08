@@ -120,7 +120,7 @@ Use type-safe `sprintf` exclusively for combining strings unless there is a comp
 - No query expressions
 - No mutable state (except when unavoidable due to interoperability with .NET or external frameworks)
 - No `if...then...else` constructs as they hurt readability (many potential ones are actually monads or monad-like structures anyway)
-- No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think - when you bump into problems with `for` or `while`looping tuples, for example, you will switch to `List.iter` for the rest of your programming life anyway.)
+- No `for` and `while` loops (I do mean it. The `for` loop is not as harmless as you might think - when you bump into problems with `for` or `while`looping tuples, you will switch to `List.iter` for the rest of your programming life anyway.)
 
 **Code Organisation**
 
