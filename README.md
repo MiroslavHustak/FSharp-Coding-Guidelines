@@ -200,7 +200,17 @@ Type providers for CSV, XML, and JSON are preferred over equivalent .NET librari
 
 Keeping data separate from operations on data, in accordance with functional programming principles. This separation reinforces the decision to avoid mixing paradigms.
 
-## 11. Learning Lessons from Others 
+## 11. Advanced FP Concepts & FSharpPlus.
+
+Prefer simpler, more idiomatic functional constructs. Advanced concepts such as an isomorphism, cardinality, state monads, and free monads, as well as the FSharpPlus library, are generally discouraged in production code for readability and maintainability reasons.
+
+Exceptions: 
+- Free monads are acceptable as a design pattern in console applications.
+- These features (and FSharpPlus) may be used freely in prototypes, proofs of concept, experiments, and other disposable or one-off code.
+
+Advanced features may appear in my templates and educational code — they are intentionally included there for learning and demonstration purposes only, not as patterns to copy into production.
+
+## 12. Learning Lessons from Others 
 
 Learn lessons from others:
 
