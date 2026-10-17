@@ -10,7 +10,7 @@
 
 ## 1. Philosophy
 
-Following a pure functional programming approach, avoiding object-oriented features and mutability unless absolutely necessary for interoperability with .NET libraries or specific frameworks.
+Following a pure functional programming approach, avoiding object-oriented features and mutability unless absolutely necessary for interoperability with .NET libraries or specific frameworks. Why? To be more profitable and joyful than OOP or "mishmash" programmers, of course :-).
 
 ## 2. General Principles
 
