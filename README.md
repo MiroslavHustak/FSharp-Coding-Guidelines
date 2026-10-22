@@ -79,10 +79,24 @@ Exception: Type providers infer the schema from a sample, and erased JSON provid
 
 **`%A` Format Specifier**
 
-`%A` uses reflection at runtime, so it is an exception to the Reflection-Free Code rule, allowed only in test code, only for diagnostics, and sparingly.
+`%A` relies on runtime type metadata and generic pretty-printing facilities that are problematic for trimming and Native AOT. It is therefore an exception to the Reflection-Free Code rule and is allowed only in test code, only for diagnostics, and sparingly.
 
 - Production: Prohibited. It is slow, allocation-heavy, incompatible with trimming/AOT, and its output is neither stable nor complete (large structures are truncated). Use explicit formatting (`%s`, `%d`, `%O`) or a structured logger.
 - Tests: Use with caution, preferably not in loops, generators, or on large collections.
+
+> [!NOTE]
+> **Rules for AOT/Trimming-Friendly Code**
+> 
+> Apply only to projects explicitly targeting Native AOT or trimming. All rules of *Reflection-Free Code* apply in addition.
+>
+> - **Implicit `%A`:** `string`, `%O`, and interpolation on records, unions, and `exception`s use `%A` internally. Format fields explicitly or override `ToString`.
+> - **No assembly scanning or auto-discovery** (`services.Scan`, `RegisterAssemblyTypes`, `AddValidatorsFromAssembly`, handler/mapper discovery). Register explicitly.
+> - **No runtime code generation:** `Reflection.Emit`, `DynamicMethod`, dynamic proxies, IL generation. `Expression.Compile()` is discouraged (interpreted under AOT).
+> - **No runtime type discovery or loading** (`Assembly.Load`, `Type.GetType(string)`, `MakeGenericType`/`MakeGenericMethod`, `FSharp.Reflection`, quotation evaluation).
+> - **JSON:** Thoth.Json with explicit decoders/encoders only, never `Auto`. Verify the backend is trimming/AOT-compatible. Other serializers must be AOT-safe or isolated behind a verified boundary.
+> - **Frameworks** (ASP.NET, Giraffe, Oxpecker, Saturn, Bolero): their internal reflection is acceptable under the clean-boundary rule, but do not rely on reflective features in your own code (type-based model binding, automatic JSON, MVC-style controllers).
+> - **Third-party libraries:** hard gates are no `Reflection.Emit`/runtime proxies and no mandatory assembly scanning. Prefer documented trimming/AOT support and explicit or source-generated alternatives. Working under CoreCLR is not sufficient.
+> - **Verification (authoritative):** CI runs `dotnet publish -p:PublishAot=true` with `IL2xxx`/`IL3xxx` warnings as errors, plus a smoke test of the published binary. Documentation claims do not override this result.
 
 ## 4. Code Structure & Patterns
 
