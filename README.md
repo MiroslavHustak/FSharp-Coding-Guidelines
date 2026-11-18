@@ -220,7 +220,7 @@ Prefer simpler, more idiomatic functional constructs. Advanced concepts such as 
 
 Exceptions: 
 - Free monads are acceptable as a design pattern in console applications.
-- These features (and FSharpPlus) may be used freely in prototypes, proofs of concept, experiments, and other disposable or one-off code.
+- Advanced concepts and FSharpPlus may be used freely in prototypes, proofs of concept, experiments, and other disposable or one-off code.
 
 Advanced features may appear in my templates and educational code — they are intentionally included there for learning and demonstration purposes only, not as patterns to copy into production.
 
