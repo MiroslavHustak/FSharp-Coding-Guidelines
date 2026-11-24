@@ -188,7 +188,7 @@ Copilot-assisted review preparation is acceptable, but exercise caution.
 
 **No Copilots for Final Code Review**
 
-Copilots have an uncanny talent for turning a simple code review into a full-scale disaster of epic proportions. So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests. 
+Copilots have an uncanny talent for turning even a simple code review into a full-scale disaster of epic proportions. So, unless you have been given an extra week to fix the chaos they will inevitably cause, resist the urge to let them anywhere near your pull requests. 
 
 ## 9. Async-by-Default
 
